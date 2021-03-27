@@ -54,13 +54,13 @@ export default function SearchScreen(props) {
   };
   return (
     <div>
-      <div className="row card">
+      <div className="row">
         {loading ? (
           <LoadingBox></LoadingBox>
         ) : error ? (
           <MessageBox variant="danger">{error}</MessageBox>
         ) : (
-          <div>{products.length} Results</div>
+          <div className="danger">{products.length} Results</div>
         )}
         <div>
           Sort by{' '}
@@ -78,8 +78,8 @@ export default function SearchScreen(props) {
         </div>
       </div>
       <div className="row top">
-        <div className="col-1">
-          <h3>Department</h3>
+        <div className="col-1 card">
+          <h3 className="">Department</h3>
           <div>
             {loadingCategories ? (
               <LoadingBox></LoadingBox>

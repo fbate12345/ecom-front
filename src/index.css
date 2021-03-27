@@ -2,6 +2,11 @@ html {
   font-size: 62.5%; /* 16px x 62.5 = 10px = 1rem */
   box-sizing: border-box;
 }
+@media only screen and (max-width: 75em) {
+  html {
+    font-size: 50%;
+  }
+}
 body {
   margin: 0;
   height: 100vh;
@@ -10,6 +15,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 #root {
   height: 120%;
 }
@@ -26,21 +32,37 @@ body {
   grid-template-rows: 7rem 1fr 20rem;
   height: 120%;
 }
-header {
+header  {
   grid-area: header;
   display: grid;
-  grid-row: inherit;
+  grid-row: auto;
   grid-column: 1/-1;
   background-color: #203040;
+  
 }
+@media only screen and (max-width: 50em) {
+  .header {
+   
+     
+    grid-column: 1 / -1; } }
+@media only screen and (max-width: 37.5em) {
+  .header {
+     
+    padding: 5rem; } 
+  }
+
 main {
   grid-area: main;
   padding: 1rem;
 }
 footer {
   grid-area: footer;
+  display: grid;
+  grid-row: auto;
+  grid-column: 1/-1;
   background-color: #203040;
-  color: #ffffff;
+  
+  
 }
 /* Common */
 h1 {
@@ -102,6 +124,12 @@ header a {
   color: #ffffff;
   padding: 1rem;
 }
+
+/* Footer */
+footer a {
+  color: #ffffff;
+  padding: 1rem;
+}
 a.brand {
   color: #ffffff;
   font-size: 3rem;
@@ -116,6 +144,17 @@ a.brand {
   margin-left: 0.2rem;
   order: 5;
 }
+
+.wishlist {
+  background-color: #063fa8;
+  color: #ffffff;
+  border-radius: 50%;
+  padding: 0.2rem 0.7rem;
+  font-size: 1.4rem;
+  margin-left: 0.2rem;
+  order: 5;
+}
+
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -145,6 +184,9 @@ a.brand {
 }
 .p-1 {
   padding: 1rem;
+}
+.p-l {
+  padding-left: 1rem;
 }
 /* Aside */
 aside {
@@ -328,9 +370,17 @@ img.large {
   border-right: none;
   margin-left: 0.5rem;
   display: grid;
-   
-  width: 50vw;
+  width: 40vw;
 }
+  @media only screen and (max-width: 50em) {
+    .search {
+      grid-column: 1 / span 2; }  
+    } 
+  @media only screen and (max-width: 37.5em) {
+    .search {
+      padding: 1rem; }
+     }
+
 .active {
   font-weight: bold;
 }

@@ -9,6 +9,9 @@ export default function SigninScreen(props) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+   
+  
+
   const redirect = props.location.search
     ? props.location.search.split('=')[1]
     : '/';
@@ -54,6 +57,7 @@ export default function SigninScreen(props) {
             onChange={(e) => setPassword(e.target.value)}
           ></input>
         </div>
+        <input type="hidden" name="_csrf" value="{{csrfToken}}"></input>
         <div>
           <label />
           <button className="primary" type="submit">
@@ -67,6 +71,10 @@ export default function SigninScreen(props) {
             <Link to={`/register?redirect=${redirect}`}>
               Create your account
             </Link>
+            {/* Forgot Password?{' '}
+            <Link to={`/forgotPassword?redirect=${redirect}`}>
+              Click
+            </Link> */}
           </div>
         </div>
       </form>

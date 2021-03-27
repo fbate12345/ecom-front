@@ -62,7 +62,7 @@ export default function ProfileScreen() {
     <div>
       <form className="form card" onSubmit={submitHandler}>
         <div>
-          <h1>User Profile</h1>
+          <h1 className="success">User Profile</h1>
         </div>
         {loading ? (
           <LoadingBox></LoadingBox>
@@ -84,8 +84,9 @@ export default function ProfileScreen() {
               <input
                 id="name"
                 type="text"
-                placeholder="Enter name"
+                // placeholder="Enter name"
                 value={name}
+                autoFocus
                 onChange={(e) => setName(e.target.value)}
               ></input>
             </div>
@@ -94,8 +95,9 @@ export default function ProfileScreen() {
               <input
                 id="email"
                 type="email"
-                placeholder="Enter email"
+                // placeholder="Enter email"
                 value={email}
+                autoFocus
                 onChange={(e) => setEmail(e.target.value)}
               ></input>
             </div>
@@ -104,7 +106,7 @@ export default function ProfileScreen() {
               <input
                 id="password"
                 type="password"
-                placeholder="Enter password"
+                // placeholder="Enter password"
                 onChange={(e) => setPassword(e.target.value)}
               ></input>
             </div>
@@ -113,7 +115,7 @@ export default function ProfileScreen() {
               <input
                 id="confirmPassword"
                 type="password"
-                placeholder="Enter confirm password"
+                // placeholder="Enter confirm password"
                 onChange={(e) => setConfirmPassword(e.target.value)}
               ></input>
             </div>
@@ -125,8 +127,9 @@ export default function ProfileScreen() {
                   <input
                     id="sellerName"
                     type="text"
-                    placeholder="Enter Seller Name"
+                    // placeholder="Enter Seller Name"
                     value={sellerName}
+                    autoFocus
                     onChange={(e) => setSellerName(e.target.value)}
                   ></input>
                 </div>
@@ -135,7 +138,7 @@ export default function ProfileScreen() {
                   <input
                     id="sellerLogo"
                     type="text"
-                    placeholder="Enter Seller Logo"
+                    // placeholder="Enter Seller Logo"
                     value={sellerLogo}
                     onChange={(e) => setSellerLogo(e.target.value)}
                   ></input>
@@ -145,8 +148,9 @@ export default function ProfileScreen() {
                   <input
                     id="sellerDescription"
                     type="text"
-                    placeholder="Enter Seller Description"
+                    // placeholder="Enter Seller Description"
                     value={sellerDescription}
+                    autoFocus
                     onChange={(e) => setSellerDescription(e.target.value)}
                   ></input>
                 </div>

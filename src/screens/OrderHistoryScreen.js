@@ -21,13 +21,13 @@ export default function OrderHistoryScreen(props) {
       ) : (
         <table className="table">
           <thead>
-            <tr>
-              <th>ID</th>
-              <th>DATE</th>
-              <th>TOTAL</th>
-              <th>PAID</th>
-              <th>DELIVERED</th>
-              <th>ACTIONS</th>
+            <tr className="danger">
+              <th scope="col">ID</th>
+              <th scope="col">DATE</th>
+              <th scope="col">TOTAL</th>
+              <th scope="col">PAID</th>
+              <th scope="col">DELIVERED</th>
+              <th scope="col">ACTIONS</th>
             </tr>
           </thead>
           <tbody>

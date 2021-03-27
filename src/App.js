@@ -38,6 +38,8 @@ const Signout = lazy(() => import('./actions/userActions') );
 const AdminRoute = lazy(() => import( './components/AdminRoute') );
 const PrivateRoute = lazy(() => import( './components/PrivateRoute') );
 const CartScreen = lazy(() => import( './screens/CartScreen') );
+// const ForgotPasswordScreen = lazy(() => import( './screens/ForgotPasswordScreen') );
+
 const ChatBox = lazy(() => import( './components/ChatBox') );
 const HomeScreen = lazy(() => import( './screens/HomeScreen') );
 const OrderHistoryScreen = lazy(() => import( './screens/OrderHistoryScreen') );
@@ -62,6 +64,7 @@ const SearchScreen = lazy(() => import( './screens/SearchScreen') );
 const LoadingBox = lazy(() => import( './components/LoadingBox') );
 const MessageBox = lazy(() => import( './components/MessageBox') );
 const MapScreen = lazy(() => import( './screens/MapScreen') );
+const WishlistScreen = lazy(() => import( './screens/WishlistScreen') );
 
 
 function App() {
@@ -86,19 +89,20 @@ function App() {
   }, [dispatch]);
   return (
     <Suspense fallback={
-      <div className=" danger">
+      <div className="danger row.center">
+                Adozen Inc
 
-        Adozen Inc
+          
       </div>
     }>
     <BrowserRouter>
       <div className="grid-container">
-        <header className="row">
+        <header className="row sticky">
           <div>
           <sup>
               <img
                 className="small"
-                src="/images/FF-01-removebg-preview.png"
+                src="/images/FF-resize.png"
               ></img></sup>
             <button
               type="button"
@@ -119,6 +123,13 @@ function App() {
             ></Route>
           </div>
           <div>
+            
+            {userInfo ?(<Link to="/cart">
+              Wishlist
+              {cartItems.length > 0 && (
+               <sub> <span className="wishlist">{cartItems.length}</span></sub>
+              )}
+            </Link>):""}
             <Link to="/cart">
               Cart
               {cartItems.length > 0 && (
@@ -316,7 +327,7 @@ function App() {
              </Link>
            
              
-             <Link className=" " to="/customer-service">
+             <Link className=" " to="/Returns">
                Returns
              </Link>
            
@@ -327,9 +338,9 @@ function App() {
              
            
            
-           {userInfo && !userInfo.isAdmin && <ChatBox userInfo={userInfo}><i class="fa fa-commenting-o" aria-hidden="true"></i></ChatBox>}
+           {userInfo && !userInfo.isAdmin && <ChatBox userInfo={userInfo}><i class="fa fa-comment-o" aria-hidden="true"></i></ChatBox>}
           
-          <p>All right reserved</p>
+           
           </footer>
       </div>
     </BrowserRouter>

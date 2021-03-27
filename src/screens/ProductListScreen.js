@@ -90,12 +90,12 @@ export default function ProductListScreen(props) {
           <table className="table">
             <thead>
               <tr>
-                <th>ID</th>
-                <th>NAME</th>
-                <th>PRICE</th>
-                <th>CATEGORY</th>
-                <th>BRAND</th>
-                <th>ACTIONS</th>
+                <th scope="col">ID</th>
+                <th scope="col">PRICE</th>
+                <th scope="col">NAME</th>
+                <th scope="col">CATEGORY</th>
+                <th scope="col">BRAND</th>
+                <th scope="col">ACTIONS</th>
               </tr>
             </thead>
             <tbody>
